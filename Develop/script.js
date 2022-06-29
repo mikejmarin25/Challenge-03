@@ -1,18 +1,9 @@
 // Assignment code here
 
-// Get references to the #generate element
-//var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-// var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-
-//   passwordText.value = password;
-
-function writePassword() {
+function generatePassword() {
   var chars = ""; //Final character selection for password generator
   console.log("Character string is " + chars);
-  
+
   //Checks for password length
   var passwordLength = prompt(
     "Please enter a password between 8-128 characters"
@@ -23,7 +14,7 @@ function writePassword() {
   }
   console.log("The password length is: " + passwordLength);
   alert("The password length is set to: " + passwordLength);
-  
+
   // Checks for lower
   var lower = "";
   var l1 = prompt("Would like to include lower-case letters", "yes or no");
@@ -35,7 +26,7 @@ function writePassword() {
   }
   chars = lower;
   console.log("Character string is " + chars);
-  
+
   //Checks for upper
   var upper = "";
   var u1 = prompt("Would like to include upper-case letters", "yes or no");
@@ -62,7 +53,10 @@ function writePassword() {
 
   //Checks if the user wants to add special characters
   var special = "";
-  var s1 = prompt("Would like to include special characters in this password?","yes or no");
+  var s1 = prompt(
+    "Would like to include special characters in this password?",
+    "yes or no"
+  );
   if (s1 == "yes") {
     special = "!@#$%^&*()";
   }
@@ -71,16 +65,12 @@ function writePassword() {
   }
   chars = lower + upper + numbers + special;
   console.log("Character string is " + chars);
-  
 
+  //Password Generator
   var password = "";
- for (var i = 0; i <= passwordLength; i++) {
-   var randomNumber = Math.floor(Math.random() * chars.length);
-   password += chars.substring(randomNumber, randomNumber +1);
+  for (var i = 0; i <= passwordLength; i++) {
+    var randomNumber = Math.floor(Math.random() * chars.length);
+    password += chars.substring(randomNumber, randomNumber + 1);
   }
-        document.getElementById("password").value = password;
- 
+  document.getElementById("password").value = password;
 }
-
-// Add event listener to generate button
-//generateBtn.addEventListener("click", writePassword);
