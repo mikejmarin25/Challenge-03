@@ -30,3 +30,10 @@ WHEN all prompts are answered
 THEN a password is generated that matches the selected criteria
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
+
+Deployed Application:
+
+https://mikejmarin25.github.io/Challenge-03/Develop/index.html 
+
+ <img width="1225" alt="Screen Shot 2022-06-30 at 18 56 45" src="https://user-images.githubusercontent.com/105763252/176791914-c816f5ee-a19d-40a6-8f22-c22f56254a1e.png">
+
