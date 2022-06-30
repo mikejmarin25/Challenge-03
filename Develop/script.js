@@ -5,14 +5,18 @@ function generatePassword() {
   console.log("Character string is " + chars);
 
   //Checks for password length
-  var passwordLength = prompt(
-    "Please enter a password between 8-128 characters in length"
-  );
-  if (passwordLength < 8 || passwordLength > 128) {
+  var passwordLength = prompt("Please enter a password length between 8-128 characters");
+  if (isNaN(passwordLength)){
+    alert("Password length can only be a numeric value, try again");
+    return;
+  }
+
+  else if (passwordLength < 8 || passwordLength > 128) {
     alert("Incorrect password length!");
     passwordLength = null;
     return;
   }
+
   console.log("The password length is: " + passwordLength);
   alert("The password length is set to: " + passwordLength);
 
