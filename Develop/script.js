@@ -5,7 +5,9 @@ function generatePassword() {
   console.log("Character string is " + chars);
 
   //Checks for password length
+  
   var passwordLength = prompt("Please enter a password length between 8-128 characters");
+
   if (isNaN(passwordLength)){
     alert("Password length can only be a numeric value, try again");
     return;
@@ -95,7 +97,7 @@ function generatePassword() {
   //Password Generator
   var password = "";
 
-  for (var i = 0; i <= passwordLength; i++) {
+  for (var i = 0; i < passwordLength; i++) {
     var randomNumber = Math.floor(Math.random() * chars.length);
     password += chars.substring(randomNumber, randomNumber + 1);
   }
