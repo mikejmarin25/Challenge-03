@@ -19,43 +19,50 @@ function generatePassword() {
   // Checks for lower
   var lower = "";
   var l1 = prompt("Would like to include lower-case letters", "yes or no");
+  
   if (l1 === "yes") {
     lower = "abcdefghijklmnopqrstuvwxyz";
-  } else if (l1 === "no") {
+  } 
+  else if (l1 === "no") {
     lower = "";
-  } else {
+  } 
+  else {
     alert("Invalid Selection, please try again");
-    return;
+  return;
   }
+
   chars = lower;
   console.log("Character string is " + chars);
 
   //Checks for upper
   var upper = "";
   var u1 = prompt("Would like to include upper-case letters", "yes or no");
+  
   if (u1 === "yes") {
     upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  } else if (u1 === "no") {
+  } 
+  else if (u1 === "no") {
     upper = "";
-  } else {
+  } 
+  else {
     alert("Invalid Selection, please try again");
     return;
   }
-
+  
   chars = lower + upper;
   console.log("Character string is " + chars);
 
   //Checks for numbers
   var numbers = "";
-  var n1 = prompt(
-    "Would like to include numbers in your password",
-    "yes or no"
-  );
+  var n1 = prompt("Would like to include numbers in your password", "yes or no");
+
   if (n1 === "yes") {
     numbers = "1234567890";
-  } else if (n1 === "no") {
+  } 
+  else if (n1 === "no") {
     numbers = "";
-  } else {
+  } 
+  else {
     alert("Invalid Selection, please try again");
     return;
   }
@@ -65,27 +72,29 @@ function generatePassword() {
 
   //Checks if the user wants to add special characters
   var special = "";
-  var s1 = prompt(
-    "Would like to include special characters in this password?",
-    "yes or no"
-  );
+  var s1 = prompt("Would like to include special characters in this password?", "yes or no");
 
   if (s1 === "yes") {
     special = "!@#$%^&*()";
-  } else if (s1 === "no") {
+  } 
+  else if (s1 === "no") {
     special = "";
-  } else {
+  } 
+  else {
     alert("Invalid Selection, please try again");
     return;
   }
+
   chars = lower + upper + numbers + special;
   console.log("Character string is " + chars);
 
   //Password Generator
   var password = "";
+
   for (var i = 0; i <= passwordLength; i++) {
     var randomNumber = Math.floor(Math.random() * chars.length);
     password += chars.substring(randomNumber, randomNumber + 1);
   }
   document.getElementById("password").value = password;
+
 }
