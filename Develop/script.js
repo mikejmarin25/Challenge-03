@@ -6,11 +6,12 @@ function generatePassword() {
 
   //Checks for password length
   var passwordLength = prompt(
-    "Please enter a password between 8-128 characters"
+    "Please enter a password between 8-128 characters in length"
   );
   if (passwordLength < 8 || passwordLength > 128) {
-    return alert("Incorrect password length!");
+    alert("Incorrect password length!");
     passwordLength = null;
+    return;
   }
   console.log("The password length is: " + passwordLength);
   alert("The password length is set to: " + passwordLength);
@@ -18,11 +19,13 @@ function generatePassword() {
   // Checks for lower
   var lower = "";
   var l1 = prompt("Would like to include lower-case letters", "yes or no");
-  if (l1 == "yes") {
+  if (l1 === "yes") {
     lower = "abcdefghijklmnopqrstuvwxyz";
-  }
-  if (l1 == "no") {
+  } else if (l1 === "no") {
     lower = "";
+  } else {
+    alert("Invalid Selection, please try again");
+    return;
   }
   chars = lower;
   console.log("Character string is " + chars);
@@ -30,24 +33,33 @@ function generatePassword() {
   //Checks for upper
   var upper = "";
   var u1 = prompt("Would like to include upper-case letters", "yes or no");
-  if (u1 == "yes") {
+  if (u1 === "yes") {
     upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  }
-  if (u1 == "no") {
+  } else if (u1 === "no") {
     upper = "";
+  } else {
+    alert("Invalid Selection, please try again");
+    return;
   }
+
   chars = lower + upper;
   console.log("Character string is " + chars);
 
   //Checks for numbers
   var numbers = "";
-  var n1 = prompt("Would like to include numbers in your password", "yes or no");
-  if (n1 == "yes") {
+  var n1 = prompt(
+    "Would like to include numbers in your password",
+    "yes or no"
+  );
+  if (n1 === "yes") {
     numbers = "1234567890";
-  }
-  if (n1 == "no") {
+  } else if (n1 === "no") {
     numbers = "";
+  } else {
+    alert("Invalid Selection, please try again");
+    return;
   }
+
   chars = lower + upper + numbers;
   console.log("Character string is " + chars);
 
@@ -57,11 +69,14 @@ function generatePassword() {
     "Would like to include special characters in this password?",
     "yes or no"
   );
-  if (s1 == "yes") {
+
+  if (s1 === "yes") {
     special = "!@#$%^&*()";
-  }
-  if (s1 == "no") {
+  } else if (s1 === "no") {
     special = "";
+  } else {
+    alert("Invalid Selection, please try again");
+    return;
   }
   chars = lower + upper + numbers + special;
   console.log("Character string is " + chars);
